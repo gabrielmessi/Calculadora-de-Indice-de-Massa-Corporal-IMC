@@ -1,1 +1,52 @@
+# Cálculo do Índice de Massa Corporal (IMC)
+# a = Peso em quilogramas (kg)
+# b = Altura em metros (m)
+# Fórmula: IMC = a / b²
+def calcular_imc(a, b):
+  return a / b**2
 
+# Menu
+while True:
+
+  print("\n===MENU===")
+  print("1. Calcular IMC")
+  print("2. Sair")
+
+  try:
+    escolha = int(input("\nDigite o número correspondente a sua escolha: "))
+    if escolha == 2:
+      print("\nEncerrando programa...")
+      break
+    elif escolha == 1:
+      kg = float(input("\nPeso: "))
+      a = kg
+      if a < 2.5 or a > 635:
+        print("Peso inválido.")
+        continue
+      else:
+        comprimento = float(input("Altura: "))
+        b = comprimento
+        if b < 0.50 or b > 2.72:
+          print("Altura inválida.")
+          continue
+    else:
+      print("Escolha inválida.")
+      continue
+  except ValueError:
+    print("Apenas valores numéricos.")
+    continue
+
+  print(f"\nIMC = {calcular_imc(a,b):.2f}")
+
+  if calcular_imc(a, b) < 18.5:
+      print("Baixo peso.")
+  elif calcular_imc(a, b) <= 24.9:
+      print("Peso adequado.")
+  elif calcular_imc(a, b) <= 29.9:
+      print("Sobrepeso.")
+  elif calcular_imc(a, b) <= 34.9:
+      print("Obesidade grau 1.")
+  elif calcular_imc(a, b) <= 39.9:
+      print("Obesidade grau 2.")
+  else:
+      print("Obesidade grau 3.")
