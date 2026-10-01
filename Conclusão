@@ -40,13 +40,13 @@ while True:
 
   if calcular_imc(a, b) < 18.5:
       print("Baixo peso.")
-  elif calcular_imc(a, b) <= 24.9:
+  elif calcular_imc(a, b) < 25:
       print("Peso adequado.")
-  elif calcular_imc(a, b) <= 29.9:
+  elif calcular_imc(a, b) < 30:
       print("Sobrepeso.")
-  elif calcular_imc(a, b) <= 34.9:
+  elif calcular_imc(a, b) < 35:
       print("Obesidade grau 1.")
-  elif calcular_imc(a, b) <= 39.9:
+  elif calcular_imc(a, b) < 40:
       print("Obesidade grau 2.")
   else:
       print("Obesidade grau 3.")
